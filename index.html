@@ -5,17 +5,17 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>No Headroom</title>
   <style>
-    html, body { height: 100%; margin: 0; background: #000; }
+    html, body { height: 100%; margin: 0; background:#000; }
     img {
       position: fixed; inset: 0;
       width: 100vw; height: 100vh;
-      object-fit: cover; object-position: center;
+      object-fit: cover;          /* fill screen */
+      object-position: center;
       user-select: none; -webkit-user-drag: none;
-      background:#000;
     }
   </style>
 </head>
 <body>
-  <img src="assets/hero.jpg" alt="No Headroom full screen">
+  <img src="assets/hero.jpg" alt="No Headroom">
 </body>
 </html>
