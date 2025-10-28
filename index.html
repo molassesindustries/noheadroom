@@ -2,72 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>No Headroom — Coming Soon</title>
-
-  <!-- PT Mono -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap" rel="stylesheet">
-
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>No Headroom</title>
   <style>
-    /* Minimal reset */
-    * { box-sizing: border-box; }
-    html, body { height: 100%; margin: 0; }
-
-    /* Theme */
-    :root {
-      --bg: #ffffff;
-      --fg: #111111;
-      --muted: #555555;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #0b0b0b;
-        --fg: #f2f2f2;
-        --muted: #b3b3b3;
-      }
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--fg);
-      font-family: "PT Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      display: grid;
-      place-items: center;
-      min-height: 100vh;
-      line-height: 1.2;
-    }
-
-    main {
-      text-align: center;
-      padding: 4rem 1.5rem;
-    }
-
-    h1 {
-      margin: 0 0 1rem 0;
-      font-size: clamp(2rem, 6vw, 6rem);
-      letter-spacing: 0.02em;
-      text-transform: lowercase; /* ensures "no headroom" appears exactly as requested */
-    }
-
-    .sub {
-      margin: 0;
-      font-size: clamp(1rem, 2.5vw, 1.5rem);
-    }
-
-    .soon {
-      margin-top: 0.5rem;
-      font-size: clamp(0.95rem, 2vw, 1.25rem);
-      font-style: italic;
-      color: var(--muted);
+    html, body { height: 100%; margin: 0; background: #000; }
+    img {
+      position: fixed; inset: 0;
+      width: 100vw; height: 100vh;
+      object-fit: cover; object-position: center;
+      user-select: none; -webkit-user-drag: none;
+      background:#000;
     }
   </style>
 </head>
 <body>
-  <main>
-    <h1>no headroom</h1>
-    <p class="sub">new music festival 2026</p>
-    <p class="soon">coming soon</p>
-  </main>
+  <img src="./hero.jpg" alt="No Headroom full screen">
 </body>
 </html>
