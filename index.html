@@ -5,72 +5,13 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>No Headroom</title>
   <style>
-    html, body { height: 100%; margin: 0; background:#000; }
-    #hero {
-      position: fixed; inset: 0;
-      width: 100vw; height: 100vh;
-      object-fit: cover; object-position: center;
-      user-select: none; -webkit-user-drag: none;
-      background:#000;
-    }
-    .overlay {
-      position: fixed; inset: 0; display: grid; place-items: center;
-      background: rgba(0,0,0,.9); color:#fff; font: 14px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      padding: 24px; text-align: left;
-    }
-    .overlay code { color:#0ff; }
-    .overlay b { color:#fff; }
+    html, body { height:100%; margin:0; background:#000; color:#fff; }
+    body { display:grid; place-items:center; font:16px/1.4 system-ui, Arial, sans-serif; }
+    a { color:#fff; text-decoration:underline; font-weight:700; }
   </style>
 </head>
 <body>
-  <img id="hero" alt="Full-screen image"/>
-  <script>
-    // 👉 Edit this to your exact file name (CASE-SENSITIVE)
-    const filename = "hero.jpg";
-
-    // Common relative locations to try (depending on how Pages is set up)
-    const candidates = [
-      `assets/${filename}`,         // /index.html + /assets/hero.jpg
-      `./assets/${filename}`,       // ./assets/hero.jpg
-      `../assets/${filename}`,      // if index.html is inside /docs
-    ];
-
-    const img = document.getElementById('hero');
-
-    function testSrcs(list, i=0) {
-      if (i >= list.length) return fail(list);
-      const src = list[i] + `?v=${Date.now()}`; // cache-bust
-      const probe = new Image();
-      probe.onload = () => { img.src = src; };
-      probe.onerror = () => testSrcs(list, i+1);
-      probe.src = src;
-    }
-
-    function fail(tried) {
-      const msg = `
-        <div class="overlay">
-          <div>
-            <div style="font-weight:700; font-size:16px; margin-bottom:8px;">⚠️ Image not found</div>
-            <div>We tried:</div>
-            <ul style="margin:8px 0 16px 18px;">
-              ${tried.map(s => `<li><code>${s}</code></li>`).join("")}
-            </ul>
-            <div><b>Checklist</b></div>
-            <ol style="margin:8px 0 0 18px;">
-              <li>Confirm the file exists in your repo at one of those paths.</li>
-              <li>Match the <b>exact filename + case</b> (e.g. <code>hero.jpg</code> ≠ <code>Hero.JPG</code>).</li>
-              <li>If GitHub Pages source is <b>/docs</b>, put both <code>index.html</code> and <code>assets/</code> inside <code>/docs</code>.</li>
-              <li>On a <b>project site</b>, your URL is <code>https://username.github.io/repo/</code>. Test the asset directly:
-                <div style="margin-top:6px"><code>https://username.github.io/repo/assets/${filename}</code></div>
-              </li>
-              <li>Use a web-friendly format: <code>.jpg</code> or <code>.png</code> (avoid <code>.heic</code> or exotic formats).</li>
-            </ol>
-          </div>
-        </div>`;
-      document.body.insertAdjacentHTML('beforeend', msg);
-    }
-
-    testSrcs(candidates);
-  </script>
+  <!-- Image is in the root directory: ./hero.jpg -->
+  <a href="./hero.jpg" target="_blank" rel="noopener">Open image</a>
 </body>
 </html>
