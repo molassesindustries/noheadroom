@@ -5,13 +5,18 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>No Headroom</title>
   <style>
-    html, body { height:100%; margin:0; background:#000; color:#fff; }
-    body { display:grid; place-items:center; font:16px/1.4 system-ui, Arial, sans-serif; }
-    a { color:#fff; text-decoration:underline; font-weight:700; }
+    html, body { height: 100%; margin: 0; background: #000; }
+    img {
+      position: fixed; inset: 0;
+      width: 100vw; height: 100vh;
+      object-fit: cover;       /* fills screen, keeps aspect */
+      object-position: center;
+      user-select: none; -webkit-user-drag: none;
+    }
   </style>
 </head>
 <body>
-  <!-- Image is in the root directory: ./hero.jpg -->
-  <a href="./hero.jpg" target="_blank" rel="noopener">Open image</a>
+  <!-- Image file lives at /assets/hero.jpg -->
+  <img src="assets/hero.jpg" alt="Full-screen image">
 </body>
 </html>
